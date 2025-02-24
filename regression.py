@@ -1,4 +1,6 @@
 # --- IMPORT SECTION ---
+import math
+
 import pandas as pd #for DataFrames
 import numpy as np # for numpy array operations
 import matplotlib.pyplot as plt # for visualization
@@ -77,5 +79,9 @@ plt.scatter(X_test, y_test, color = 'red', label = 'Real Data') # actual plot
 plt.plot(X_test, y_pred, color = 'blue', label = 'Predicted Data') # regression line
 plt.legend() # show the legend
 plt.show()
+
+# Evaluating the model
+rmse = math.sqrt(mean_squared_error(y_test, y_pred)) # Root mean squared error
+print(f"\nRMSE: {rmse: .2f}")
 
 # --- END OF MAIN CODE ---
